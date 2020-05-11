@@ -1,4 +1,4 @@
-package com.example.flutter_architecture
+package com.joris.flutterarch
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
