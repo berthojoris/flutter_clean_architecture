@@ -10,8 +10,20 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<HomeViewModel>.reactive(
       builder: (context, model, child) => Scaffold(
+        appBar: AppBar(
+          title: Text(
+            model.title,
+          ),
+        ),
         body: Center(
-          child: Text(model.title),
+          child: Text(
+            model.couterlbl,
+            style: TextStyle(fontSize: 25.0),
+          ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: model.updateCounter,
+          child: Icon(Icons.add),
         ),
       ),
       viewModelBuilder: () => HomeViewModel(),
