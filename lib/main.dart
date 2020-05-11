@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_architecture/app/locator.dart';
+import 'package:stacked_services/stacked_services.dart';
 
-import 'ui/views/home/home_view.dart';
+import 'app/router.gr.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  setupLocator();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -13,7 +18,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomeView(),
+      initialRoute: Routes.startupView,
+      onGenerateRoute: Router().onGenerateRoute,
+      navigatorKey: locator<NavigationService>().navigatorKey,
     );
   }
 }
