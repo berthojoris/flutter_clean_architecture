@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_architecture/app/locator.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'app/router.gr.dart';
-import 'ui/views/partial_builds/partial_builds_view.dart';
+import 'ui/views/reactive_example/reactive_example_view.dart';
 
 void main() {
   setupLocator();
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // initialRoute: Routes.startupView,
-      home: PartialBuildView(),
+      home: ReactiveExampleView(),
       onGenerateRoute: Router().onGenerateRoute,
       navigatorKey: locator<NavigationService>().navigatorKey,
     );
